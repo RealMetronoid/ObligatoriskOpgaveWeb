@@ -15,7 +15,7 @@
         <div v-if="records.length > 0">
             <h2>Records</h2>
             <ul>
-                <li v-for="record in records" :key="record.id">{{ record.name }}</li>
+                <li v-for="record in records" :key="record.id">{{ record.title }}</li>
             </ul>
         </div>
         <div v-else>
@@ -23,6 +23,6 @@
         </div>
         <p v-if="message">{{ message }}</p>
     </div>
-    <script src="index.js"></script>
+    <script type="module" src="index.js"></script>
 </body>
 </html>

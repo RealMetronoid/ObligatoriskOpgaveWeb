@@ -1,4 +1,4 @@
-recordUrl = "http://localhost:5292/api/Record";
+const recordUrl = "http://localhost:5292/api/Record";
 
 Vue.createApp({
     data() {
@@ -7,15 +7,20 @@ Vue.createApp({
             message: null
         }
     },
+    mounted() {
+        this.getRecord();
+    },
+
     methods: {
         getRecord() {
-            axios.get(recordUrl).then(response =>{
+            axios.get(recordUrl) 
+            .then(response => {
                 this.records = response.data;
                 this.message = "Fetched players succesfully";
             })
             .catch(ex => {
-                this.message = "Failde to fetch players - " + ex.message;
-            })
+                this.message = "Failed to fetch records - " + ex.message;
+            });
         }
     }
 }).mount("#app")
