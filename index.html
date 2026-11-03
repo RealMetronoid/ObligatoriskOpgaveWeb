@@ -11,10 +11,18 @@
 <body>
     <h1>Music List</h1>
     <div id="app">
-        for ()
+        <!-- View Data -->
+        <div v-if="records.length > 0">
+            <h2>Records</h2>
+            <ul>
+                <li v-for="record in records" :key="record.id">{{ record.name }}</li>
+            </ul>
+        </div>
+        <div v-else>
+        <p>No records yet</p>
+        </div>
+        <p v-if="message">{{ message }}</p>
     </div>
-
-
     <script src="index.js"></script>
 </body>
 </html>
