@@ -8,11 +8,11 @@ Vue.createApp({
         }
     },
     mounted() {
-        this.getRecord();
+        this.getRecords();
     },
 
     methods: {
-        getRecord() {
+        getRecords() {
             axios.get(recordUrl) 
             .then(response => {
                 this.records = response.data;
