@@ -14,13 +14,13 @@
         <!-- Search and Sort Controls -->
         <div class="row mb-3">
             <div class="col-md-4">
-                <input type="text" class="form-control" v-model="filters.title" placeholder="Filter by Title..." @input="getRecords">
+                <input id="titleSearch" type="text" class="form-control" v-model="filters.title" placeholder="Filter by Title..." @input="getRecords">
             </div>
             <div class="col-md-4">
-                <input type="text" class="form-control" v-model="filters.artist" placeholder="Filter by Artist..." @input="getRecords">
+                <input id="artistSearch" type="text" class="form-control" v-model="filters.artist" placeholder="Filter by Artist..." @input="getRecords">
             </div>
             <div class="col-md-4">
-                <select class="form-select" v-model="filters.sortBy" @change="getRecords">
+                <select id="sortBy" class="form-select" v-model="filters.sortBy" @change="getRecords">
                     <option value="">Sort By...</option>
                     <option value="id">ID</option>
                     <option value="title">Title</option>
@@ -35,7 +35,7 @@
         <div v-if="records.length > 0">
             <h2>Records</h2>
             <ul class="list-group">
-                <li class="list-group-item" v-for="record in records" :key="record.id">
+                <li class="list-group-item records" v-for="record in records" :key="record.id">
                     <strong>{{ record.title }}</strong> by {{ record.artist }} 
                     <span class="text-muted">({{ record.publicationYear }} - {{ record.listeners }} listeners)</span>
                 </li>

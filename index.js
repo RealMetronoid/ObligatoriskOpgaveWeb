@@ -14,7 +14,6 @@ Vue.createApp({
     },
     mounted() {
         this.getRecords();
-        this.getRecords();
     },
     methods: {
         getRecords() {
